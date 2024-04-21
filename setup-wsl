@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Install necessary packages
+sudo apt update
+sudo apt install -y curl git zsh
+
+# Install software using APT (Advanced Package Tool)
+sudo apt install -y code slack xcode iterm2 postman docker figma
+
+# Configure global git settings
+git config --global user.email "michalis.koutridis@gmail.com"
+git config --global user.name "Michalis Koutridis"
+
+# Install zsh and plugins
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions.git $ZSH_CUSTOM/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+# Install NVM (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+# Install latest Node.js and npm using NVM
+nvm install node
+
+# Install latest Yarn
+npm install -g yarn
+
+# Install Kubernetes CLI (kubectl)
+sudo apt install -y kubectl

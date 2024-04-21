@@ -28,3 +28,11 @@ npm install -g yarn
 curl -LO https://dl.k8s.io/release/v1.23.0/bin/windows/amd64/kubectl.exe
 chmod +x ./kubectl.exe
 mv ./kubectl.exe /usr/local/bin/kubectl
+
+echo "Copy ZSH config ..."
+cp .zshenv ~/.zshenv
+cp .zshrc ~/.zshrc
+
+echo "Source ZSH config ..."
+source ~/.zshenv
+source ~/.zshrc

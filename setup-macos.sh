@@ -1,4 +1,10 @@
 #!/bin/bash
+-e
+
+echo "Creating folders..."
+[[ ! -d ~/dev ]] && mkdir ~/dev
+[[ ! -d ~/dev/my-projects ]] && mkdir ~/dev/my-projects
+[[ ! -d ~/dev/org-projects ]] && mkdir ~/dev/org-projects
 
 # Install Homebrew (if not already installed)
 if ! command -v brew &> /dev/null; then

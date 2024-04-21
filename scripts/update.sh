@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
 echo "Copy ZSH config ..."
-cp $DOTFILES/.zshenv ~/.zshenv
-cp $DOTFILES/.zshrc ~/.zshrc
+cp ./.zshenv ~/.zshenv
+cp ./.zshrc ~/.zshrc
 
 echo "Source dot files ..."
 source ~/.zshenv

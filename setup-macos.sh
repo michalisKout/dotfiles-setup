@@ -10,8 +10,6 @@ echo "Install software using Homebrew ..."
 
 brew install --cask visual-studio-code slack xcode iterm2 postman docker figma google-chrome font-fira-code
 
-
-
 # Configure global git settings
 echo "Configure global git settings ..."
 git config --global user.email "michalis.koutridis@gmail.com"

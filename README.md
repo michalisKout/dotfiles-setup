@@ -4,7 +4,7 @@ A repository for setting up my dotfiles on a new equipment
 
 ## Instructions
 
-1. Make script executable
+### 1. Make script executable
 
 _Mac Os_
 ```bash
@@ -16,7 +16,7 @@ _Windows (Linux subsystem)_
 chmod +x setup-wsl.sh
 ```
 
-2. Run script
+### 2. Run script
 
 _Mac Os_
 ```bash
@@ -26,4 +26,12 @@ _Mac Os_
 _Windows (Linux subsystem)_
 ```bash
 ./setup-wsl.sh
+```
+
+### 3. Update zsh config (Optional)
+
+```bash
+cd dotfiles-setup
+git pull
+./scripts/update.sh
 ```

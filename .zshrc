@@ -18,6 +18,20 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+
+# completion
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
+  autoload -Uz compinit
+  compinit -i
+fi
+
+# auto suggestions
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+# syntax highlighting
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
 plugins=(
   brew
   git

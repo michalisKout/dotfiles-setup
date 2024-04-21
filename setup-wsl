@@ -1,21 +1,19 @@
 #!/bin/bash
 
-# Install necessary packages
-sudo apt update
-sudo apt install -y curl git zsh
-
-# Install software using APT (Advanced Package Tool)
-sudo apt install -y code slack xcode iterm2 postman docker figma
+# Install necessary tools
+choco install -y git vscode slack xcode iterm2 postman docker figma google-chrome
 
 # Configure global git settings
 git config --global user.email "michalis.koutridis@gmail.com"
 git config --global user.name "Michalis Koutridis"
 
-# Install zsh and plugins
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-completions.git $ZSH_CUSTOM/plugins/zsh-completions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+# Install zsh
+curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
+
+# Install zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zsh/custom/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # Install NVM (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
@@ -27,4 +25,6 @@ nvm install node
 npm install -g yarn
 
 # Install Kubernetes CLI (kubectl)
-sudo apt install -y kubectl
+curl -LO https://dl.k8s.io/release/v1.23.0/bin/windows/amd64/kubectl.exe
+chmod +x ./kubectl.exe
+mv ./kubectl.exe /usr/local/bin/kubectl

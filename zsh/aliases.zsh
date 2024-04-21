@@ -1,6 +1,6 @@
 # yarn
-alias yd='yarn dev'
-alias ys='yarn start'
+alias yad='yarn dev'
+alias yas='yarn start'
 
 # homebrew
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'

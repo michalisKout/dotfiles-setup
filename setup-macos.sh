@@ -43,9 +43,7 @@ brew install yarn
 brew install kubernetes-cli
 
 echo "Copy ZSH config ..."
-cp .zshenv ~/.zshenv
 cp .zshrc ~/.zshrc
 
 echo "Source ZSH config ..."
-source ~/.zshenv
 source ~/.zshrc
